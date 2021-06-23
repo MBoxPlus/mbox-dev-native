@@ -1,0 +1,12 @@
+CLI: true
+DEPENDENCIES:
+- MBoxCore
+- MBoxDev
+- MBoxWorkspace
+- MBoxCocoapods
+NAME: MBoxDevNative
+VERSION: '1.0'
+GROUPS:
+- Plugin
+AUTHORS:
+- MBox Team

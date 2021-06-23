@@ -1,0 +1,5 @@
+{
+  "podfile": "Native/Podfile.rb",
+  "podspec": "Native/__ProjectName__.podspec",
+  "xcodeproj": "Native/__ProjectName__.xcodeproj"
+}
