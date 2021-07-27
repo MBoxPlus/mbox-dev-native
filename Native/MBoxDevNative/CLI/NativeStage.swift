@@ -28,8 +28,25 @@ public class NativeStage: BuildStage {
         return MBoxDevNative.pluginPackage?.resoucePath(for: "Template")
     }
 
-    public static func updateManifest(_ manifest: MBPluginPackage) {
+    private static var swiftVersion: String?
+    public static func getSwiftVersion() throws -> String {
+        if let swiftVersion = self.swiftVersion { return swiftVersion }
+        let cmd = MBCMD()
+        cmd.bin = "swift"
+        guard cmd.exec("--version") else {
+            throw RuntimeError("Could not get swift version.")
+        }
+        let text = cmd.outputString
+        guard let matchs = try text.match("Swift version ([0-9\\.])+ ") else {
+            throw RuntimeError("Parse swift version failed:\n\(text)")
+        }
+        swiftVersion = matchs[0][0]
+        return swiftVersion!
+    }
+
+    public static func updateManifest(_ manifest: MBPluginPackage) throws {
         manifest.CLI = true
+        manifest.swiftVersion = try self.getSwiftVersion()
     }
 
     open func build(repos: [(repo: MBWorkRepo, curVersion: String?, nextVersion: String)]) throws {
