@@ -10,21 +10,7 @@
 		AB49667C2341FF7B00AF8A47 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49667B2341FF7B00AF8A47 /* Command.swift */; };
 		AB6D75F2230467FC003A0EA1 /* __ProjectName__.h in Headers */ = {isa = PBXBuildFile; fileRef = AB6D75F0230467FC003A0EA1 /* __ProjectName__.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB6D75FE23046AAE003A0EA1 /* __ProjectName__.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D75FD23046AAE003A0EA1 /* __ProjectName__.swift */; };
-		ABA6E8FF23FD5DD10020E22D /* __ProjectName__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D75ED230467FB003A0EA1 /* __ProjectName__.framework */; };
-		ABA6E90723FD5ED80020E22D /* CommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6E90623FD5ED80020E22D /* CommandTests.swift */; };
-		ABA6E91D23FE32300020E22D /* NimblePlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6E91C23FE32300020E22D /* NimblePlus.swift */; };
-		ABA6E91F23FE325D0020E22D /* MBoxUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6E91E23FE325D0020E22D /* MBoxUnitTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		ABA6E90023FD5DD10020E22D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB6D75E4230467FB003A0EA1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB6D75EC230467FB003A0EA1;
-			remoteInfo = __ProjectName__;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB4648B923126EF800972C12 /* __ProjectName__.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; indentWidth = 2; path = __ProjectName__.podspec; sourceTree = SOURCE_ROOT; tabWidth = 2; };
@@ -36,11 +22,6 @@
 		AB6D75FD23046AAE003A0EA1 /* __ProjectName__.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __ProjectName__.swift; sourceTree = "<group>"; };
 		ABA08CF6238D8E6C00C5567A /* Basic.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Basic.xcconfig; sourceTree = "<group>"; };
 		ABA08CF7238D8E9700C5567A /* manifest.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = manifest.yml; path = ../manifest.yml; sourceTree = "<group>"; };
-		ABA6E8FA23FD5DD10020E22D /* __ProjectName__Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = __ProjectName__Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABA6E8FE23FD5DD10020E22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABA6E90623FD5ED80020E22D /* CommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTests.swift; sourceTree = "<group>"; };
-		ABA6E91C23FE32300020E22D /* NimblePlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimblePlus.swift; sourceTree = "<group>"; };
-		ABA6E91E23FE325D0020E22D /* MBoxUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBoxUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,14 +29,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABA6E8F723FD5DD10020E22D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABA6E8FF23FD5DD10020E22D /* __ProjectName__.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +65,6 @@
 				ABA08CF7238D8E9700C5567A /* manifest.yml */,
 				ABA08CF6238D8E6C00C5567A /* Basic.xcconfig */,
 				AB6D75EF230467FC003A0EA1 /* __ProjectName__ */,
-				ABA6E8FB23FD5DD10020E22D /* __ProjectName__Tests */,
 				AB6D75EE230467FB003A0EA1 /* Products */,
 				6E16758D7706B641485230F5 /* Pods */,
 				0EDA26A8FF75B77852DE0438 /* Frameworks */,
@@ -103,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				AB6D75ED230467FB003A0EA1 /* __ProjectName__.framework */,
-				ABA6E8FA23FD5DD10020E22D /* __ProjectName__Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,25 +88,6 @@
 				AB6D75F1230467FC003A0EA1 /* Info.plist */,
 			);
 			path = __ProjectName__;
-			sourceTree = "<group>";
-		};
-		ABA6E8FB23FD5DD10020E22D /* __ProjectName__Tests */ = {
-			isa = PBXGroup;
-			children = (
-				ABA6E90523FD5EC00020E22D /* CLI */,
-				ABA6E91C23FE32300020E22D /* NimblePlus.swift */,
-				ABA6E91E23FE325D0020E22D /* MBoxUnitTests.swift */,
-				ABA6E8FE23FD5DD10020E22D /* Info.plist */,
-			);
-			path = __ProjectName__Tests;
-			sourceTree = "<group>";
-		};
-		ABA6E90523FD5EC00020E22D /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				ABA6E90623FD5ED80020E22D /* CommandTests.swift */,
-			);
-			path = CLI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +112,7 @@
 				AB6D75E9230467FB003A0EA1 /* Sources */,
 				AB6D75EA230467FB003A0EA1 /* Frameworks */,
 				AB6D75EB230467FB003A0EA1 /* Resources */,
-				AB6D760023046E1B003A0EA1 /* Package Dylibs */,
+
 			);
 			buildRules = (
 			);
@@ -170,24 +122,6 @@
 			productName = __ProjectName__;
 			productReference = AB6D75ED230467FB003A0EA1 /* __ProjectName__.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		ABA6E8F923FD5DD10020E22D /* __ProjectName__Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABA6E90423FD5DD10020E22D /* Build configuration list for PBXNativeTarget "__ProjectName__Tests" */;
-			buildPhases = (
-				ABA6E8F623FD5DD10020E22D /* Sources */,
-				ABA6E8F723FD5DD10020E22D /* Frameworks */,
-				ABA6E8F823FD5DD10020E22D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ABA6E90123FD5DD10020E22D /* PBXTargetDependency */,
-			);
-			name = __ProjectName__Tests;
-			productName = __ProjectName__Tests;
-			productReference = ABA6E8FA23FD5DD10020E22D /* __ProjectName__Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -202,9 +136,6 @@
 					AB6D75EC230467FB003A0EA1 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1030;
-					};
-					ABA6E8F923FD5DD10020E22D = {
-						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -222,7 +153,6 @@
 			projectRoot = "";
 			targets = (
 				AB6D75EC230467FB003A0EA1 /* __ProjectName__ */,
-				ABA6E8F923FD5DD10020E22D /* __ProjectName__Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,38 +165,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABA6E8F823FD5DD10020E22D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AB6D760023046E1B003A0EA1 /* Package Dylibs */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
-			);
-			name = "Package Dylibs";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/__ProjectName__.podspec.json",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/sh -li";
-			shellScript = "export LANG=en_US.UTF-8\nexport LANGUAGE=en_US.UTF-8\nexport LC_ALL=en_US.UTF-8\ncd \"${SRCROOT}/../..\"\nbundle exec ruby \"${PODS_ROOT}/MBoxCore/repackage-dylibs.rb\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB6D75E9230467FB003A0EA1 /* Sources */ = {
@@ -278,25 +177,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABA6E8F623FD5DD10020E22D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABA6E91D23FE32300020E22D /* NimblePlus.swift in Sources */,
-				ABA6E90723FD5ED80020E22D /* CommandTests.swift in Sources */,
-				ABA6E91F23FE325D0020E22D /* MBoxUnitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ABA6E90123FD5DD10020E22D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB6D75EC230467FB003A0EA1 /* __ProjectName__ */;
-			targetProxy = ABA6E90023FD5DD10020E22D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AB6D75F3230467FC003A0EA1 /* Debug */ = {
@@ -483,41 +364,6 @@
 			};
 			name = Release;
 		};
-		ABA6E90223FD5DD10020E22D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = __ProjectName__Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mbox.--ProjectName--Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		ABA6E90323FD5DD10020E22D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = __ProjectName__Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mbox.--ProjectName--Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -535,15 +381,6 @@
 			buildConfigurations = (
 				AB6D75F6230467FC003A0EA1 /* Debug */,
 				AB6D75F7230467FC003A0EA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ABA6E90423FD5DD10020E22D /* Build configuration list for PBXNativeTarget "__ProjectName__Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABA6E90223FD5DD10020E22D /* Debug */,
-				ABA6E90323FD5DD10020E22D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

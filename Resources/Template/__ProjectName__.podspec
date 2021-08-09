@@ -22,7 +22,10 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "#{name}/*.{h,m,mm,swift,c,cpp}", "#{name}/**/*.{h,m,mm,swift,c,cpp}"
 
-  yaml['DEPENDENCIES'].each do |name|
+  yaml['DEPENDENCIES']&.each do |name|
+    spec.dependency name
+  end
+  yaml['FORWARD_DEPENDENCIES']&.each do |name|
     spec.dependency name
   end
 end

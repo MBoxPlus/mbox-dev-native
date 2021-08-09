@@ -13,16 +13,19 @@ Pod::Spec.new do |spec|
     A MBox Plugin MBoxDevNative.
                    DESC
 
-  spec.homepage     = "https://github.com/MBoxSpace/#{name2}.git"
+  spec.homepage     = "https://github.com/MBoxPlus/#{name2}.git"
   spec.license      = "MIT"
   spec.author       = { `git config user.name`.strip => `git config user.email`.strip }
 
-  spec.source       = { :git => "git@github.com:MBoxSpace/#{name2}.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "git@github.com:MBoxPlus/#{name2}.git", :tag => "#{spec.version}" }
   spec.platform     = :osx, '10.15'
 
   spec.source_files = "#{name}/*.{h,m,mm,swift,c,cpp}", "#{name}/**/*.{h,m,mm,swift,c,cpp}"
 
-  yaml['DEPENDENCIES'].each do |name|
+  yaml['DEPENDENCIES']&.each do |name|
+    spec.dependency name
+  end
+  yaml['FORWARD_DEPENDENCIES']&.each do |name, _|
     spec.dependency name
   end
 end

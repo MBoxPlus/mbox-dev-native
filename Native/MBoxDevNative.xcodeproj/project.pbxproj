@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,47 +12,26 @@
 		AB5234A72664DF5400B6EB90 /* XCodeCMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5234A62664DF5400B6EB90 /* XCodeCMD.swift */; };
 		AB5236DE2664EFB600B6EB90 /* MBWorkRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5236DD2664EFB600B6EB90 /* MBWorkRepo.swift */; };
 		AB5236E72666243500B6EB90 /* NativeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5236E62666243500B6EB90 /* NativeStage.swift */; };
+		AB645E3D26BD7D05009C1587 /* spec_ipc.rb in Resources */ = {isa = PBXBuildFile; fileRef = AB645E3C26BD7D05009C1587 /* spec_ipc.rb */; };
 		AB6D75F2230467FC003A0EA1 /* MBoxDevNative.h in Headers */ = {isa = PBXBuildFile; fileRef = AB6D75F0230467FC003A0EA1 /* MBoxDevNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB6D75FE23046AAE003A0EA1 /* MBoxDevNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D75FD23046AAE003A0EA1 /* MBoxDevNative.swift */; };
-		ABA6E8FF23FD5DD10020E22D /* MBoxDevNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D75ED230467FB003A0EA1 /* MBoxDevNative.framework */; };
-		ABA6E90723FD5ED80020E22D /* CommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6E90623FD5ED80020E22D /* CommandTests.swift */; };
-		ABA6E91D23FE32300020E22D /* NimblePlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6E91C23FE32300020E22D /* NimblePlus.swift */; };
-		ABA6E91F23FE325D0020E22D /* MBoxUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6E91E23FE325D0020E22D /* MBoxUnitTests.swift */; };
-		D3F430C2AFFCCE39700E3BC8 /* Pods_MBoxDevNativeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A3764FAC942AB9DFAAC7C9 /* Pods_MBoxDevNativeTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		ABA6E90023FD5DD10020E22D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB6D75E4230467FB003A0EA1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB6D75EC230467FB003A0EA1;
-			remoteInfo = MBoxDevNative;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3F049A881DB273033631A11B /* Pods_MBoxDevNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBoxDevNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51A3764FAC942AB9DFAAC7C9 /* Pods_MBoxDevNativeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBoxDevNativeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DFD85C77A788BF693FC454B /* Pods-MBoxDevNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBoxDevNativeTests.release.xcconfig"; path = "Target Support Files/Pods-MBoxDevNativeTests/Pods-MBoxDevNativeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB4648B923126EF800972C12 /* MBoxDevNative.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; indentWidth = 2; path = MBoxDevNative.podspec; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		AB4648BA23126EF800972C12 /* Podfile.rb */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; indentWidth = 2; path = Podfile.rb; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB49667B2341FF7B00AF8A47 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		AB5234A62664DF5400B6EB90 /* XCodeCMD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCodeCMD.swift; sourceTree = "<group>"; };
 		AB5236DD2664EFB600B6EB90 /* MBWorkRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBWorkRepo.swift; sourceTree = "<group>"; };
 		AB5236E62666243500B6EB90 /* NativeStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeStage.swift; sourceTree = "<group>"; };
+		AB645E3C26BD7D05009C1587 /* spec_ipc.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = spec_ipc.rb; sourceTree = "<group>"; };
 		AB6D75ED230467FB003A0EA1 /* MBoxDevNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBoxDevNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6D75F0230467FC003A0EA1 /* MBoxDevNative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBoxDevNative.h; sourceTree = "<group>"; };
 		AB6D75F1230467FC003A0EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6D75FD23046AAE003A0EA1 /* MBoxDevNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBoxDevNative.swift; sourceTree = "<group>"; };
 		ABA08CF6238D8E6C00C5567A /* Basic.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Basic.xcconfig; sourceTree = "<group>"; };
 		ABA08CF7238D8E9700C5567A /* manifest.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = manifest.yml; path = ../manifest.yml; sourceTree = "<group>"; };
-		ABA6E8FA23FD5DD10020E22D /* MBoxDevNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBoxDevNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABA6E8FE23FD5DD10020E22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABA6E90623FD5ED80020E22D /* CommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTests.swift; sourceTree = "<group>"; };
-		ABA6E91C23FE32300020E22D /* NimblePlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimblePlus.swift; sourceTree = "<group>"; };
-		ABA6E91E23FE325D0020E22D /* MBoxUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBoxUnitTests.swift; sourceTree = "<group>"; };
-		B3B0FC0001F5DE95AE68C576 /* Pods-MBoxDevNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBoxDevNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-MBoxDevNativeTests/Pods-MBoxDevNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C89632DBF98264962CB0BCF7 /* Pods-MBoxDevNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBoxDevNative.release.xcconfig"; path = "Target Support Files/Pods-MBoxDevNative/Pods-MBoxDevNative.release.xcconfig"; sourceTree = "<group>"; };
 		E8680AB92E0A65756B56FDFE /* Pods-MBoxDevNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBoxDevNative.debug.xcconfig"; path = "Target Support Files/Pods-MBoxDevNative/Pods-MBoxDevNative.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,15 +45,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABA6E8F723FD5DD10020E22D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABA6E8FF23FD5DD10020E22D /* MBoxDevNative.framework in Frameworks */,
-				D3F430C2AFFCCE39700E3BC8 /* Pods_MBoxDevNativeTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				3F049A881DB273033631A11B /* Pods_MBoxDevNative.framework */,
-				51A3764FAC942AB9DFAAC7C9 /* Pods_MBoxDevNativeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,8 +63,6 @@
 				AB4648B923126EF800972C12 /* MBoxDevNative.podspec */,
 				E8680AB92E0A65756B56FDFE /* Pods-MBoxDevNative.debug.xcconfig */,
 				C89632DBF98264962CB0BCF7 /* Pods-MBoxDevNative.release.xcconfig */,
-				B3B0FC0001F5DE95AE68C576 /* Pods-MBoxDevNativeTests.debug.xcconfig */,
-				5DFD85C77A788BF693FC454B /* Pods-MBoxDevNativeTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -113,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				AB5234A62664DF5400B6EB90 /* XCodeCMD.swift */,
+				AB645E3C26BD7D05009C1587 /* spec_ipc.rb */,
 			);
 			path = CMD;
 			sourceTree = "<group>";
@@ -131,7 +99,6 @@
 				ABA08CF7238D8E9700C5567A /* manifest.yml */,
 				ABA08CF6238D8E6C00C5567A /* Basic.xcconfig */,
 				AB6D75EF230467FC003A0EA1 /* MBoxDevNative */,
-				ABA6E8FB23FD5DD10020E22D /* MBoxDevNativeTests */,
 				AB6D75EE230467FB003A0EA1 /* Products */,
 				6E16758D7706B641485230F5 /* Pods */,
 				0EDA26A8FF75B77852DE0438 /* Frameworks */,
@@ -142,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				AB6D75ED230467FB003A0EA1 /* MBoxDevNative.framework */,
-				ABA6E8FA23FD5DD10020E22D /* MBoxDevNativeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,25 +124,6 @@
 				AB6D75F1230467FC003A0EA1 /* Info.plist */,
 			);
 			path = MBoxDevNative;
-			sourceTree = "<group>";
-		};
-		ABA6E8FB23FD5DD10020E22D /* MBoxDevNativeTests */ = {
-			isa = PBXGroup;
-			children = (
-				ABA6E90523FD5EC00020E22D /* CLI */,
-				ABA6E91C23FE32300020E22D /* NimblePlus.swift */,
-				ABA6E91E23FE325D0020E22D /* MBoxUnitTests.swift */,
-				ABA6E8FE23FD5DD10020E22D /* Info.plist */,
-			);
-			path = MBoxDevNativeTests;
-			sourceTree = "<group>";
-		};
-		ABA6E90523FD5EC00020E22D /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				ABA6E90623FD5ED80020E22D /* CommandTests.swift */,
-			);
-			path = CLI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +149,6 @@
 				AB6D75E9230467FB003A0EA1 /* Sources */,
 				AB6D75EA230467FB003A0EA1 /* Frameworks */,
 				AB6D75EB230467FB003A0EA1 /* Resources */,
-				AB6D760023046E1B003A0EA1 /* Package Dylibs */,
 			);
 			buildRules = (
 			);
@@ -212,26 +158,6 @@
 			productName = MBoxDevNative;
 			productReference = AB6D75ED230467FB003A0EA1 /* MBoxDevNative.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		ABA6E8F923FD5DD10020E22D /* MBoxDevNativeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABA6E90423FD5DD10020E22D /* Build configuration list for PBXNativeTarget "MBoxDevNativeTests" */;
-			buildPhases = (
-				6F052C963CC2BC67DD7DEF3E /* [CP] Check Pods Manifest.lock */,
-				ABA6E8F623FD5DD10020E22D /* Sources */,
-				ABA6E8F723FD5DD10020E22D /* Frameworks */,
-				ABA6E8F823FD5DD10020E22D /* Resources */,
-				96F6BABE5B5A3E8E6713DDA0 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ABA6E90123FD5DD10020E22D /* PBXTargetDependency */,
-			);
-			name = MBoxDevNativeTests;
-			productName = MBoxDevNativeTests;
-			productReference = ABA6E8FA23FD5DD10020E22D /* MBoxDevNativeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -246,9 +172,6 @@
 					AB6D75EC230467FB003A0EA1 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1030;
-					};
-					ABA6E8F923FD5DD10020E22D = {
-						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -266,7 +189,6 @@
 			projectRoot = "";
 			targets = (
 				AB6D75EC230467FB003A0EA1 /* MBoxDevNative */,
-				ABA6E8F923FD5DD10020E22D /* MBoxDevNativeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,13 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABA6E8F823FD5DD10020E22D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AB645E3D26BD7D05009C1587 /* spec_ipc.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,66 +227,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6F052C963CC2BC67DD7DEF3E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MBoxDevNativeTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		96F6BABE5B5A3E8E6713DDA0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MBoxDevNativeTests/Pods-MBoxDevNativeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MBoxDevNativeTests/Pods-MBoxDevNativeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MBoxDevNativeTests/Pods-MBoxDevNativeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AB6D760023046E1B003A0EA1 /* Package Dylibs */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
-			);
-			name = "Package Dylibs";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/MBoxDevNative.podspec.json",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/sh -li";
-			shellScript = "export LANG=en_US.UTF-8\nexport LANGUAGE=en_US.UTF-8\nexport LC_ALL=en_US.UTF-8\ncd \"${SRCROOT}/../..\"\nbundle exec ruby \"${PODS_ROOT}/MBoxCore/repackage-dylibs.rb\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -386,25 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABA6E8F623FD5DD10020E22D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABA6E91D23FE32300020E22D /* NimblePlus.swift in Sources */,
-				ABA6E90723FD5ED80020E22D /* CommandTests.swift in Sources */,
-				ABA6E91F23FE325D0020E22D /* MBoxUnitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ABA6E90123FD5DD10020E22D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB6D75EC230467FB003A0EA1 /* MBoxDevNative */;
-			targetProxy = ABA6E90023FD5DD10020E22D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AB6D75F3230467FC003A0EA1 /* Debug */ = {
@@ -593,43 +431,6 @@
 			};
 			name = Release;
 		};
-		ABA6E90223FD5DD10020E22D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3B0FC0001F5DE95AE68C576 /* Pods-MBoxDevNativeTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MBoxDevNativeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mbox.--ProjectName--Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		ABA6E90323FD5DD10020E22D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DFD85C77A788BF693FC454B /* Pods-MBoxDevNativeTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MBoxDevNativeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mbox.--ProjectName--Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -647,15 +448,6 @@
 			buildConfigurations = (
 				AB6D75F6230467FC003A0EA1 /* Debug */,
 				AB6D75F7230467FC003A0EA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ABA6E90423FD5DD10020E22D /* Build configuration list for PBXNativeTarget "MBoxDevNativeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABA6E90223FD5DD10020E22D /* Debug */,
-				ABA6E90323FD5DD10020E22D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
