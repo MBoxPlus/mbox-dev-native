@@ -17,12 +17,22 @@ module Pod
               all_paths << dir unless all_paths.include?(dir)
               paths.concat Dir[path + "/Versions/A/Frameworks/*.framework"]
             end
-            all_paths
+            all_paths.sort
           end
         end
 
         def merge_spec_xcconfig_into_xcconfig(spec_xcconfig_hash, xcconfig)
           xcconfig = super(spec_xcconfig_hash, xcconfig)
+          xcconfig.attributes.delete("OTHER_CFLAGS")
+          xcconfig.attributes.each do |name, value|
+            xcconfig.attributes[name] = value.shellsplit.map do |v|
+              next v unless v.start_with?("${PODS_ROOT}/")
+              path = v.sub("${PODS_ROOT}", target.sandbox.root.to_s)
+              path = Pathname(path).cleanpath.to_s
+              next v unless path.start_with?(mbox_plugins_root.to_s)
+              nil
+            end.compact.join(" ")
+          end
           xcconfig = super(
             {"FRAMEWORK_SEARCH_PATHS" => application_framework_search_paths.map { |p| "\"#{p}\"" }.join(" ")}, xcconfig)
           xcconfig

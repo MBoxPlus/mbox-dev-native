@@ -21,6 +21,7 @@ open class XcodeCMD: MBCMD {
     public var configuration: String?
     public var quiet: Bool = true
     public var settings: [String: String]? = nil
+    public var derivedDataPath: String? = nil
 
     open override func exec(_ string: String, workingDirectory: String? = nil, env: [String : String]? = nil) -> Int32 {
         var args = [String]()
@@ -43,6 +44,10 @@ open class XcodeCMD: MBCMD {
             args.append("-showBuildTimingSummary")
         }
         args.append("-skipUnavailableActions")
+        if let derivedDataPath = self.derivedDataPath {
+            args.append("-derivedDataPath")
+            args.append(derivedDataPath.quoted)
+        }
         return super.exec(args.joined(separator: " ") + " " + string, workingDirectory: workingDirectory, env: env)
     }
 

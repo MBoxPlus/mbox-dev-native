@@ -75,4 +75,13 @@ module Pod
       mbox_dev_resolver_specs_by_target
     end
   end
+
+  class PodTarget
+    alias_method :mbox_framework_paths_0811, :framework_paths
+    def framework_paths
+      mbox_framework_paths_0811.reject { |name, path|
+        name.start_with?("MBox")
+      }
+    end
+  end
 end

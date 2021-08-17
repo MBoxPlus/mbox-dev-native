@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -112,7 +112,6 @@
 				AB6D75E9230467FB003A0EA1 /* Sources */,
 				AB6D75EA230467FB003A0EA1 /* Frameworks */,
 				AB6D75EB230467FB003A0EA1 /* Resources */,
-
 			);
 			buildRules = (
 			);
@@ -140,7 +139,7 @@
 				};
 			};
 			buildConfigurationList = AB6D75E7230467FB003A0EA1 /* Build configuration list for PBXProject "__ProjectName__" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

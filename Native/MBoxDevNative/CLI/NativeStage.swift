@@ -11,6 +11,7 @@ import MBoxCore
 import MBoxWorkspaceCore
 import MBoxDev
 import MBoxCocoapods
+import MBoxRuby
 
 public class NativeStage: BuildStage {
 
@@ -52,16 +53,46 @@ public class NativeStage: BuildStage {
     open func build(repos: [(repo: MBWorkRepo, curVersion: String?, nextVersion: String)]) throws {
         let shouldBuildSwift = repos.contains(where: { $0.repo.shouldBuildSwiftPackage })
         if shouldBuildSwift {
-            let cmd = XcodeCMD()
-            cmd.xcworkspace = Workspace.xcworkspacePath
-            cmd.scheme = "MBox"
-            cmd.configuration = "Release"
-            cmd.settings = ["DSTROOT": self.outputDir]
-            if !cmd.build() {
-                throw RuntimeError("Xcode build failed: \(Workspace.xcworkspacePath)")
+            try UI.log(verbose: "Xcode Build") {
+                let cmd = XcodeCMD()
+                cmd.xcworkspace = Workspace.xcworkspacePath
+                cmd.scheme = "MBox"
+                cmd.configuration = "Release"
+                cmd.settings = ["DSTROOT": self.outputDir]
+                cmd.derivedDataPath = self.outputDir.appending(pathComponent: "DerivedData")
+                if !cmd.build() {
+                    throw RuntimeError("Xcode build failed: \(Workspace.xcworkspacePath)")
+                }
+            }
+            try UI.log(verbose: "Generate Podspec") {
+                try self.generatePodspec(repos: repos)
             }
         } else {
             UI.log(verbose: "No repo should be built.")
+        }
+    }
+
+    private func generatePodspec(repos: [(repo: MBWorkRepo, curVersion: String?, nextVersion: String)]) throws {
+        try BundlerCMD.setup(workingDirectory: Workspace.rootPath)
+        let script = MBoxDevNative.bundle.path(forResource: "spec_ipc", ofType: "rb")!
+        for (repo, _, nextVersion) in repos {
+            try UI.log(verbose: "[\(repo)]") {
+                for specPath in repo.allPodspecPaths() {
+                    let head = try repo.git!.commit()
+                    let cmd = BundlerCMD(workingDirectory: specPath.deletingLastPathComponent)
+                    cmd.gemfilePath = Workspace.rootPath.appending(pathComponent: "Gemfile")
+                    if let url = repo.gitURL {
+                        cmd.env["SPEC_SOURCE_GIT"] = url.toGitStyle()
+                        cmd.env["SPEC_HOMEPAGE"] = url.toHTTPStyle()
+                    }
+                    cmd.env["SPEC_SOURCE_COMMIT"] = head.oid.desc(length: 7)
+                    cmd.env["PRODUCT_DIR"] = repo.productDir(self.outputDir)
+                    cmd.env["SPEC_VERSION"] = nextVersion
+                    cmd.env["SPEC_ORIGIN_PATH"] = specPath
+                    cmd.env["SPEC_TARGET_PATH"] = repo.productDir(self.outputDir).appending(pathComponent: specPath.lastPathComponent).appending(pathExtension: "json")
+                    cmd.exec("exec ruby \(script.quoted)")
+                }
+            }
         }
     }
 
