@@ -25,10 +25,6 @@ public class NativeStage: BuildStage {
 
     public var outputDir: String
 
-    public static var path: String? {
-        return MBoxDevNative.pluginPackage?.resoucePath(for: "Template")
-    }
-
     private static var swiftVersion: String?
     public static func getSwiftVersion() throws -> String {
         if let swiftVersion = self.swiftVersion { return swiftVersion }
@@ -41,13 +37,14 @@ public class NativeStage: BuildStage {
         guard let matchs = try text.match("Swift version ([0-9\\.])+ ") else {
             throw RuntimeError("Parse swift version failed:\n\(text)")
         }
-        swiftVersion = matchs[0][0]
+        swiftVersion = matchs[0][1]
         return swiftVersion!
     }
 
-    public static func updateManifest(_ manifest: MBPluginPackage) throws {
-        manifest.CLI = true
-        manifest.swiftVersion = try self.getSwiftVersion()
+    public func update(manifest: MBPluginPackage, repo: MBWorkRepo, version: String) throws {
+        if manifest.CLI == true {
+            manifest.swiftVersion = try Self.getSwiftVersion()
+        }
     }
 
     open func build(repos: [(repo: MBWorkRepo, curVersion: String?, nextVersion: String)]) throws {
@@ -119,4 +116,16 @@ public class NativeStage: BuildStage {
     public func upgrade(repo: MBWorkRepo, nextVersion: String) throws {
         try repo.updateSwiftVersion(nextVersion)
     }
+}
+
+extension NativeStage: DevTemplate {
+
+    public static var path: String? {
+        return MBoxDevNative.pluginPackage?.resoucePath(for: "Template")
+    }
+
+    public static func updateManifest(_ manifest: MBPluginPackage) throws {
+        manifest.CLI = true
+    }
+
 }

@@ -20,42 +20,47 @@ def note(msg)
 end
 
 envvars = %w(
-             PRODUCT_DIR
+             SPEC_ORIGIN_PATH
+             SPEC_TARGET_PATH
+
              SPEC_VERSION
              SPEC_HOMEPAGE
              SPEC_SOURCE_GIT
              SPEC_SOURCE_COMMIT
-             SPEC_ORIGIN_PATH
-             SPEC_TARGET_PATH
              )
 
 envvars.each do |var|
     Kernel.const_set(var, ENV[var])
 end
 
-podspec_path = File.join(SPEC_ORIGIN_PATH)
-note podspec_path
+note SPEC_ORIGIN_PATH
 
 require 'cocoapods-core'
-spec = Pod::Specification.from_file(podspec_path)
+spec = Pod::Specification.from_file(SPEC_ORIGIN_PATH)
 root_name = spec.name
-spec.version = SPEC_VERSION
+spec.version = SPEC_VERSION if SPEC_VERSION
 spec.homepage = SPEC_HOMEPAGE if SPEC_HOMEPAGE
-git = SPEC_SOURCE_GIT || spec.source[:git]
-spec.source = {
-    :git => git,
-    :commit => SPEC_SOURCE_COMMIT
-}
+if SPEC_SOURCE_COMMIT
+    git = SPEC_SOURCE_GIT || spec.source[:git]
+    spec.source = {
+        :git => git,
+        :commit => SPEC_SOURCE_COMMIT
+    }
+end
 
 specs = spec.subspecs.blank? ? [spec] : spec.subspecs
-Dir.chdir(PRODUCT_DIR) do
+Dir.chdir(File.dirname(SPEC_TARGET_PATH)) do
     specs.each do |spec|
         framework_name = spec.name.gsub("/", "")
         framework_name = root_name if framework_name == "#{root_name}Default"
         framework_name += ".framework"
         spec.vendored_frameworks = framework_name
-
         spec.source_files = []
+
+        user_target_xcconfig = spec.attributes_hash["user_target_xcconfig"] || {}
+        puts user_target_xcconfig
+        user_target_xcconfig.delete("FRAMEWORK_SEARCH_PATHS")
+        spec.user_target_xcconfig = user_target_xcconfig
     end
     note "Write to `#{SPEC_TARGET_PATH}`"
     File.write(SPEC_TARGET_PATH, spec.to_pretty_json)

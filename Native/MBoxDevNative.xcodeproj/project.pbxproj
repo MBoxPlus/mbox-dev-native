@@ -15,6 +15,8 @@
 		AB645E3D26BD7D05009C1587 /* spec_ipc.rb in Resources */ = {isa = PBXBuildFile; fileRef = AB645E3C26BD7D05009C1587 /* spec_ipc.rb */; };
 		AB6D75F2230467FC003A0EA1 /* MBoxDevNative.h in Headers */ = {isa = PBXBuildFile; fileRef = AB6D75F0230467FC003A0EA1 /* MBoxDevNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB6D75FE23046AAE003A0EA1 /* MBoxDevNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D75FD23046AAE003A0EA1 /* MBoxDevNative.swift */; };
+		ABA41D3D26CCEB140061E23F /* Dev.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA41D3C26CCEB140061E23F /* Dev.swift */; };
+		ABDE56D526D4C6A5006A8B54 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE56D426D4C6A5006A8B54 /* Pod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		AB6D75FD23046AAE003A0EA1 /* MBoxDevNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBoxDevNative.swift; sourceTree = "<group>"; };
 		ABA08CF6238D8E6C00C5567A /* Basic.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Basic.xcconfig; sourceTree = "<group>"; };
 		ABA08CF7238D8E9700C5567A /* manifest.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = manifest.yml; path = ../manifest.yml; sourceTree = "<group>"; };
+		ABA41D3C26CCEB140061E23F /* Dev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dev.swift; sourceTree = "<group>"; };
+		ABDE56D426D4C6A5006A8B54 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		C89632DBF98264962CB0BCF7 /* Pods-MBoxDevNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBoxDevNative.release.xcconfig"; path = "Target Support Files/Pods-MBoxDevNative/Pods-MBoxDevNative.release.xcconfig"; sourceTree = "<group>"; };
 		E8680AB92E0A65756B56FDFE /* Pods-MBoxDevNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBoxDevNative.debug.xcconfig"; path = "Target Support Files/Pods-MBoxDevNative/Pods-MBoxDevNative.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,8 @@
 			children = (
 				AB5236E62666243500B6EB90 /* NativeStage.swift */,
 				AB49667B2341FF7B00AF8A47 /* Build.swift */,
+				ABA41D3C26CCEB140061E23F /* Dev.swift */,
+				ABDE56D426D4C6A5006A8B54 /* Pod.swift */,
 			);
 			path = CLI;
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 			files = (
 				AB5236E72666243500B6EB90 /* NativeStage.swift in Sources */,
 				AB5236DE2664EFB600B6EB90 /* MBWorkRepo.swift in Sources */,
+				ABDE56D526D4C6A5006A8B54 /* Pod.swift in Sources */,
 				AB6D75FE23046AAE003A0EA1 /* MBoxDevNative.swift in Sources */,
 				AB49667C2341FF7B00AF8A47 /* Build.swift in Sources */,
 				AB5234A72664DF5400B6EB90 /* XCodeCMD.swift in Sources */,
+				ABA41D3D26CCEB140061E23F /* Dev.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
