@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   yaml['DEPENDENCIES']&.each do |name|
     spec.dependency name
   end
-  yaml['FORWARD_DEPENDENCIES']&.each do |name|
+  yaml['FORWARD_DEPENDENCIES']&.each do |name, _|
     spec.dependency name
   end
 end
