@@ -58,7 +58,6 @@ Dir.chdir(File.dirname(SPEC_TARGET_PATH)) do
         spec.source_files = []
 
         user_target_xcconfig = spec.attributes_hash["user_target_xcconfig"] || {}
-        puts user_target_xcconfig
         user_target_xcconfig.delete("FRAMEWORK_SEARCH_PATHS")
         spec.user_target_xcconfig = user_target_xcconfig
     end

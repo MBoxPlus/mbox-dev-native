@@ -34,7 +34,7 @@ public class NativeStage: BuildStage {
             throw RuntimeError("Could not get swift version.")
         }
         let text = cmd.outputString
-        guard let matchs = try text.match("Swift version ([0-9\\.])+ ") else {
+        guard let matchs = try text.match("Swift version ([0-9\\.]+) ") else {
             throw RuntimeError("Parse swift version failed:\n\(text)")
         }
         swiftVersion = matchs[0][1]
