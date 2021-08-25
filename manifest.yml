@@ -6,6 +6,7 @@ DEPENDENCIES:
 - MBoxWorkspace
 - MBoxRuby
 - MBoxCocoapods
+- MBoxGit
 FORWARD_DEPENDENCIES:
   MBoxDev: null
 REQUIRED: true
