@@ -43,7 +43,7 @@ module Pod
     def resolver_specs_by_target
       dev_names = sandbox.development_pods.keys
 
-      # 裁剪开发库的依赖
+      # Remove the dependencies for the development repository
       @activated.vertices.each do |name, vertex|
         next unless dev_names.include?(vertex.payload.root.name)
         vertex.outgoing_edges.delete_if { |edge|
@@ -51,7 +51,7 @@ module Pod
         }
       end
 
-      # 筛选最小依赖树
+      # Select a min dependency graphic
       query_dependencies = @podfile_dependency_cache.podfile_dependencies.map(&:name).uniq
       require_dependencies = []
       while !query_dependencies.empty?
@@ -67,7 +67,7 @@ module Pod
         end
       end
 
-      # 根据最小依赖树移除不需要的依赖
+      # Remove unused dependencies
       @activated.vertices.delete_if do |name, _|
         !require_dependencies.include?(name)
       end

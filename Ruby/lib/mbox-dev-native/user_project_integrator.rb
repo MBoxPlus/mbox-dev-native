@@ -178,7 +178,6 @@ end tell
         user_targets.each do |user_target|
         	if user_target.test_target_type?
             entry = Xcodeproj::XCScheme::TestAction::TestableReference.new(user_target).tap do |entry|
-              # 更新相对路径，Xcodeproj 不支持直接设置路径
               path = user_target.project.path.relative_path_from(workspace_path.dirname)
               ref = entry.buildable_references.first
               ref.set_reference_target(user_target)
@@ -192,7 +191,6 @@ end tell
               entry.build_for_profiling = true
               entry.build_for_archiving = true
               entry.build_for_analyzing = true
-              # 更新相对路径，Xcodeproj 不支持直接设置路径
               path = user_target.project.path.relative_path_from(workspace_path.dirname)
               ref = entry.buildable_references.first
               ref.set_reference_target(user_target)
@@ -202,10 +200,10 @@ end tell
           end
       	end
 
-        # 设置 Executable
+        # Set Executable
         cli_target = user_projects.flat_map(&:native_targets).find { |target| target.name == ::Pod::Config.instance.mdev_cli_name }
         if cli_target
-          # MDevCLI 为当前开发项目
+          # MDevCLI is in develop
           cli_ref = Xcodeproj::XCScheme::BuildableReference.new(cli_target)
           cli_ref.container_path = cli_target.project.path.relative_path_from(workspace_path.dirname)
 
@@ -213,13 +211,12 @@ end tell
           buildable_product_runnable.buildable_reference = cli_ref
           scheme.launch_action.buildable_product_runnable = buildable_product_runnable
         else
-          # 使用 MBox.app 内的 MDevCLI
+          # Use the MDevCLI in the app bundle
           path_runnable = scheme.launch_action.path_runnable
           path_runnable.file_path = ::Pod::Config.instance.mdev_cli_path
           scheme.launch_action.path_runnable = path_runnable
         end
 
-        # 设置 Workspace/build 产物路径到参数
         args = scheme.launch_action.command_line_arguments
         args["--dev-root=#{::Pod::Config.instance.project_root}"] = true
         scheme.launch_action.command_line_arguments = args
