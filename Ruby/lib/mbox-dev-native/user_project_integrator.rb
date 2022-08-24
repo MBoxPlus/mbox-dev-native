@@ -201,30 +201,32 @@ end tell
       	end
 
         # Set Executable
-        cli_target = user_projects.flat_map(&:native_targets).find { |target| target.name == ::Pod::Config.instance.mdev_cli_name }
-        if cli_target
-          # MDevCLI is in develop
-          cli_ref = Xcodeproj::XCScheme::BuildableReference.new(cli_target)
-          cli_ref.container_path = cli_target.project.path.relative_path_from(workspace_path.dirname)
+        # cli_target = user_projects.flat_map(&:native_targets).find { |target| target.name == ::Pod::Config.instance.mdev_cli_name }
+        # if cli_target
+        #   # MDevCLI is in develop
+        #   cli_ref = Xcodeproj::XCScheme::BuildableReference.new(cli_target)
+        #   cli_ref.container_path = cli_target.project.path.relative_path_from(workspace_path.dirname)
 
-          buildable_product_runnable = scheme.launch_action.buildable_product_runnable
-          buildable_product_runnable.buildable_reference = cli_ref
-          scheme.launch_action.buildable_product_runnable = buildable_product_runnable
-        else
+        #   buildable_product_runnable = scheme.launch_action.buildable_product_runnable
+        #   buildable_product_runnable.buildable_reference = cli_ref
+        #   scheme.launch_action.buildable_product_runnable = buildable_product_runnable
+        # else
           # Use the MDevCLI in the app bundle
-          path_runnable = scheme.launch_action.path_runnable
-          path_runnable.file_path = ::Pod::Config.instance.mdev_cli_path
-          scheme.launch_action.path_runnable = path_runnable
-        end
+          if cli = ::Pod::Config.instance.mdev_cli_path
+            path_runnable = scheme.launch_action.path_runnable
+            path_runnable.file_path = ::Pod::Config.instance.mdev_cli_path
+            scheme.launch_action.path_runnable = path_runnable
+          end
+        # end
 
         args = scheme.launch_action.command_line_arguments
         args["--dev-root=#{::Pod::Config.instance.project_root}"] = true
         scheme.launch_action.command_line_arguments = args
 
         env = scheme.launch_action.environment_variables
-        if env["DYLD_PRINT_LIBRARIES"].nil?
-          env["DYLD_PRINT_LIBRARIES"] = "1"
-          env["DYLD_PRINT_LIBRARIES"].enabled = false
+        if env["MBOX_PRINT_PLUGIN"].nil?
+          env["MBOX_PRINT_PLUGIN"] = "1"
+          env["MBOX_PRINT_PLUGIN"].enabled = false
         end
         if env["PATH"].nil?
           env["PATH"] = "$PATH:/usr/local/bin"

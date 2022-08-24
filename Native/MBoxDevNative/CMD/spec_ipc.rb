@@ -7,16 +7,16 @@ require 'ostruct'
 Encoding.default_external = 'UTF-8'
 
 def err(msg)
-    puts "\terror: " + msg
+    puts "error: " + msg
     exit 1
 end
 
 def warn(msg)
-    puts "\twarning: " + msg
+    puts "warning: " + msg
 end
 
 def note(msg)
-    puts "\t" + msg
+    puts msg
 end
 
 envvars = %w(
@@ -33,9 +33,8 @@ envvars.each do |var|
     Kernel.const_set(var, ENV[var])
 end
 
-note SPEC_ORIGIN_PATH
-
 require 'cocoapods-core'
+require 'mbox-dev-native/specification.rb'
 spec = Pod::Specification.from_file(SPEC_ORIGIN_PATH)
 root_name = spec.name
 spec.version = SPEC_VERSION if SPEC_VERSION
@@ -48,19 +47,15 @@ if SPEC_SOURCE_COMMIT
     }
 end
 
-specs = spec.subspecs.blank? ? [spec] : spec.subspecs
 Dir.chdir(File.dirname(SPEC_TARGET_PATH)) do
-    specs.each do |spec|
-        framework_name = spec.name.gsub("/", "")
-        framework_name = root_name if framework_name == "#{root_name}Default"
-        framework_name += ".framework"
-        spec.vendored_frameworks = framework_name
-        spec.source_files = []
+    framework_name = spec.name
+    framework_name += ".framework"
+    spec.vendored_frameworks = framework_name
+    spec.source_files = []
 
-        user_target_xcconfig = spec.attributes_hash["user_target_xcconfig"] || {}
-        user_target_xcconfig.delete("FRAMEWORK_SEARCH_PATHS")
-        spec.user_target_xcconfig = user_target_xcconfig
-    end
+    user_target_xcconfig = spec.attributes_hash["user_target_xcconfig"] || {}
+    user_target_xcconfig.delete("FRAMEWORK_SEARCH_PATHS")
+    spec.user_target_xcconfig = user_target_xcconfig
     note "Write to `#{SPEC_TARGET_PATH}`"
     File.write(SPEC_TARGET_PATH, spec.to_pretty_json)
 end

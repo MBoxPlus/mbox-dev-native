@@ -6,9 +6,8 @@ module Pod
       begin
         mbox_dev_specifications_for_dependency_1201(dependency, additional_requirements)        
       rescue Molinillo::NoSuchDependencyError => e
-        name = Specification.root_name(dependency.name)
-        if (dir = config.mbox_plugin_specifications[name]) && 
-          (spec = Specification.from_file(dir + "#{name}.podspec.json"))
+        if (path = config.mbox_module_specifications[dependency.name]) && 
+          (spec = Specification.from_file(path))
           spec = spec.subspec_by_name(dependency.name)
           return [spec] if spec
         end

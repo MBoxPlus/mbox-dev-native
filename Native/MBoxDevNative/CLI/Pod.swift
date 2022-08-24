@@ -13,10 +13,11 @@ import MBoxCocoapods
 
 extension MBCommander.Pod {
     @_dynamicReplacement(for: cmd)
-    open var dev_native_cmd: MBCMD {
+    public var dev_native_cmd: MBCMD {
         let cmd = self.cmd
-        cmd.env["MBOX_PLUGIN_PATHS"] = Dictionary(uniqueKeysWithValues: MBPluginManager.shared.packages.map { ($0.name, $0.path!) }).toJSONString(pretty: false)
-        cmd.env["MBOX_PLUGIN_NATIVE_BUNDLE_PATHS"] = Dictionary(uniqueKeysWithValues: MBPluginManager.shared.packages.compactMap { $0.nativeBundleDir == nil ? nil : ($0.name, $0.nativeBundleDir!) }).toJSONString(pretty: false)
+        cmd.env["MBOX_PLUGIN_PATHS"] = Dictionary(MBPluginManager.shared.allPackages.map { ($0.name, $0.path) }).toJSONString(pretty: false)
+        cmd.env["MBOX_MODULE_PATHS"] = Dictionary(MBPluginManager.shared.allModules.map { ($0.name, $0.path) }).toJSONString(pretty: false)
+        cmd.env["MBOX_MODULE_NATIVE_BUNDLE_PATHS"] = Dictionary(MBPluginManager.shared.allModules.compactMap { $0.CLI && $0.bundlePath != nil ? ($0.name, $0.bundlePath!.deletingLastPathComponent) : nil }).toJSONString(pretty: false)
         return cmd
     }
 }

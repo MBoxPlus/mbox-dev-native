@@ -6,6 +6,8 @@ module Pod
       mbox_dev_initialize_1201(defined_in_file, internal_hash) do
         source 'https://cdn.cocoapods.org/'
         platform :osx, '10.15'
+        use_frameworks!
+        inhibit_all_warnings!
         instance_eval(&block)
         install! 'cocoapods', :generate_multiple_pod_projects=>true, :incremental_installation=>true
 

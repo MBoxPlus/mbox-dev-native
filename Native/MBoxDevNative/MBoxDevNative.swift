@@ -5,13 +5,10 @@
 
 import Foundation
 import MBoxCore
-import MBoxWorkspaceCore
 import MBoxDependencyManager
 
 @objc(MBoxDevNative)
 open class MBoxDevNative: NSObject, MBWorkspacePluginProtocol {
-    public func registerCommanders() {
-    }
 
     public func enablePlugin(workspace: MBWorkspace, from version: String?) throws {
         var container = workspace.userSetting.container

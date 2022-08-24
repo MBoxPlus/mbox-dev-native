@@ -13,7 +13,7 @@ import MBoxDev
 extension MBCommander.Plugin.Dev {
 
     @_dynamicReplacement(for: allTemplates)
-    open class var native_allTemplates: [DevTemplate.Type] {
+    public class var native_allTemplates: [DevTemplate.Type] {
         var v = self.allTemplates
         v.append(NativeStage.self)
         return v

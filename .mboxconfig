@@ -1,8 +1,4 @@
 {
-  "plugins2" : {
-
-  },
   "podfile" : "Native\/Podfile.rb",
-  "podspec" : "Native\/MBoxDevNative.podspec",
-  "xcodeproj" : "Native\/MBoxDevNative.xcodeproj"
+  "podspec" : "Native\/MBoxDevNative.podspec"
 }

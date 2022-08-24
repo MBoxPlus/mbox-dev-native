@@ -1,6 +1,4 @@
-inhibit_all_warnings!
-use_frameworks!
 
-target '__ProjectName__' do
+target '__MBoxModuleName__' do
   podspec
 end

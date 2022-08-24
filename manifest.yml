@@ -3,11 +3,11 @@ AUTHORS:
 CLI: true
 DEPENDENCIES:
 - MBoxCore
-- MBoxWorkspace
 - MBoxRuby
 - MBoxCocoapods
 - MBoxGit
 FORWARD_DEPENDENCIES:
+  MBoxWorkspace: null
   MBoxDev: null
 REQUIRED: true
 NAME: MBoxDevNative

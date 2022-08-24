@@ -72,7 +72,40 @@ module Pod
         !require_dependencies.include?(name)
       end
 
-      mbox_dev_resolver_specs_by_target
+
+      @resolver_specs_by_target ||= {}.tap do |resolver_specs_by_target|
+        @podfile_dependency_cache.target_definition_list.each do |target|
+          next if target.abstract? && !target.platform
+
+          # can't use vertex.root? since that considers _all_ targets
+          explicit_dependencies = @podfile_dependency_cache.target_definition_dependencies(target).map(&:name).to_set
+
+          used_by_aggregate_target_by_spec_name = {}
+          used_vertices_by_spec_name = {}
+
+          @activated.tsort.reverse_each do |vertex|
+            spec_name = vertex.name
+            explicitly_included = explicit_dependencies.include?(spec_name)
+            # HOOK: Only link explicitly dependency
+            if explicitly_included # || vertex.incoming_edges.any? { |edge| used_vertices_by_spec_name.key?(edge.origin.name) && edge_is_valid_for_target_platform?(edge, target.platform) }
+              validate_platform(vertex.payload, target)
+              used_vertices_by_spec_name[spec_name] = vertex
+              used_by_aggregate_target_by_spec_name[spec_name] = vertex.payload.library_specification? &&
+                (explicitly_included || vertex.predecessors.any? { |predecessor| used_by_aggregate_target_by_spec_name.fetch(predecessor.name, false) })
+            end
+          end
+
+          resolver_specs_by_target[target] = used_vertices_by_spec_name.each_value.
+            map do |vertex|
+              payload = vertex.payload
+              non_library = !used_by_aggregate_target_by_spec_name.fetch(vertex.name)
+              spec_source = payload.respond_to?(:spec_source) && payload.spec_source
+              ResolverSpecification.new(payload, non_library, spec_source)
+            end.
+            sort_by(&:name)
+        end
+      end
+
     end
   end
 

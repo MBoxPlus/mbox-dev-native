@@ -58,8 +58,4 @@ open class XcodeCMD: MBCMD {
     public func clean() -> Bool {
         return self.exec("clean")
     }
-
-    public func test() -> Bool {
-        return self.exec("test")
-    }
 }
