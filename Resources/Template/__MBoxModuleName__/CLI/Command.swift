@@ -1,6 +1,6 @@
 //
 //  Command.swift
-//  __ProjectName__
+//  __MBoxModuleName__
 //
 //  Copyright © 2019 com.bytedance. All rights reserved.
 //

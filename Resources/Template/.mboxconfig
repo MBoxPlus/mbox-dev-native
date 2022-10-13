@@ -1,5 +1,8 @@
 {
-  "podfile": "Native/Podfile.rb",
-  "podspec": "Native/__ProjectName__.podspec",
-  "xcodeproj": "Native/__ProjectName__.xcodeproj"
+  "cocoapods": {
+    "podfiles": {
+      "__mbox-module-name__": "__MBoxModuleDir(RelativePackage)__/Native/Podfile.rb"
+    },
+    "podspecs": ["__MBoxModuleDir(RelativePackage)__/Native/__MBoxModuleName__.podspec"]
+  }
 }

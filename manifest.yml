@@ -1,12 +1,15 @@
+AUTHORS:
+- MBox Team
 CLI: true
 DEPENDENCIES:
 - MBoxCore
-- MBoxDev
-- MBoxWorkspace
+- MBoxRuby
 - MBoxCocoapods
+- MBoxGit
+FORWARD_DEPENDENCIES:
+  MBoxWorkspace: null
+  MBoxDev: null
+REQUIRED: true
 NAME: MBoxDevNative
+RUBY: true
 VERSION: '1.0'
-GROUPS:
-- Plugin
-AUTHORS:
-- MBox Team

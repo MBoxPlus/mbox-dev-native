@@ -21,6 +21,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 com.bytedance. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>__ProjectName__</string>
+	<string>__MBoxModuleName__</string>
 </dict>
 </plist>
